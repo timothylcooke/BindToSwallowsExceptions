@@ -13,11 +13,13 @@
 
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
             <Run Text="View Class:" FontWeight="Bold" />
-            <Run x:Name="ClassNameTextBlock" Text="(Text will be set in the base class's constructor)" />
+            <Run x:Name="ClassName" Text="(set in base class's constructor)" /><LineBreak />
+            <Run Text="Original DataContext:" FontWeight="Bold" />
+            <Run x:Name="OriginalStatus" Text="(set in base class's constructor)" />
         </TextBlock>
 
         <!-- This is invalid. You cannot do a two-way binding to a read-only property -->
         <!-- An exception will be thrown as soon as the MyBaseView's DataContext is set to an object with a read-only property called `MyReadOnlyProperty` -->
-        <TextBlock TextWrapping="Wrap" Text="{Binding MyReadOnlyProperty, Mode=TwoWay, FallbackValue='This binding fails, so the FallbackValue will always used. If you did not receive a dialog that an exception was fired, check the Debug Output for a swallowed exception.'}" />
+        <TextBlock TextWrapping="Wrap" Text="{Binding MyReadOnlyProperty, Mode=TwoWay, FallbackValue='This binding fails, so the FallbackValue will always used. If you were not shown a MessageBox that an exception was fired, check the Debug Output for a swallowed exception.'}" />
     </StackPanel>
 </rxui:ReactiveUserControl>

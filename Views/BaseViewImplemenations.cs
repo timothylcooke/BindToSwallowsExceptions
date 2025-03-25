@@ -6,10 +6,8 @@ namespace BindToSwallowsExceptions.Views;
 public class JustSetDataContextView : MyBaseView
 {
     public JustSetDataContextView(object? startingDataContext)
-        : base()
+        : base(startingDataContext)
     {
-        DataContext = startingDataContext;
-
         this.WhenActivated(_ =>
         {
             // The exception will throw.
@@ -21,10 +19,8 @@ public class JustSetDataContextView : MyBaseView
 public class SetDataContextInDoView : MyBaseView
 {
     public SetDataContextInDoView(object? startingDataContext)
-        : base()
+        : base(startingDataContext)
     {
-        DataContext = startingDataContext;
-
         this.WhenActivated(d =>
         {
             // The exception will throw.
@@ -36,10 +32,8 @@ public class SetDataContextInDoView : MyBaseView
 public class SetDataContextWithBindToView : MyBaseView
 {
     public SetDataContextWithBindToView(object? startingDataContext)
-        : base()
+        : base(startingDataContext)
     {
-        DataContext = startingDataContext;
-
         this.WhenActivated(d =>
         {
             // The exception will:
